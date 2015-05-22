@@ -11,28 +11,6 @@ import hashlib
 import hmac
 import urllib2
 import time
-"""
-    def get(self, post_id):
-        global username_glob
-        u = WikiDB.by_urlID(post_id)
-        x = self.request.cookies.get("user_id")
-        id_user = check_secure_val(x)
-        value = self.request.get('v')
-        default = None
-        if not id_user:
-            self.redirect("/login")
-
-        if value:
-            if value.isdigit():
-                default = WikiDB.get_by_id(int(value))
-            if not value:
-                return self.notfound()
-        else:
-            default = u.wikicontent
-
-        self.render("edit.html", content = default, user = username_glob)
-        logging.info('rendered %s', 'Edit Page')
-"""
 
 from datetime import datetime, timedelta
 from google.appengine.api import memcache
@@ -356,10 +334,8 @@ class History(MainHandler):
         if p:
             h = WikiDB.all().filter('urlID =', post_id).order('-created').fetch(None)
             self.render('history.html', history = h, user= username_glob)
-            logging.info('entrooooooooooooooooooooooooooooo')
         else:
-            logging.info('entroooooooooooooooooooooxxxxxxxxx')
-            #self.redirect('/')
+
             self.redirect('/_edit'+post_id)
 
 PAGE_RE = r'(/(?:[a-zA-Z0-9_-]+/?)*)'
