@@ -1,0 +1,27 @@
+   <style>
+
+    textarea{
+        border:1px solid #999999;
+        width:600px;
+        height: 300px;
+        margin:5px 0;
+        padding:3px;
+    }
+    </style>
+<a href="{{link}}">view</a>   |   <a href="/_history{{link}}">History</a>   |   <a href="/logout">({{user}}) Logout</a>
+<br>
+<br>
+<br>
+<div class="content">
+ 	<form id="editContent" class="form-horizontal" method="post">
+ 		<div class="form-group">
+        	<div class="textArea">
+            <textarea name="content">{{content}}</textarea>
+        	</div>
+    	</div>
+
+        <div class="error"></div>
+        <input type="submit">
+
+    </form>
+</div>

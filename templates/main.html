@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Wikiteci</title>
+    <style>
+    body {
+        margin-top: 60px;
+    }
+    textarea{
+        border:1px solid #999999;
+        width:600px;
+        height: 300px;
+        margin:5px 0;
+        padding:3px;
+    }
+    </style>
+
+</head>
+
+<body>
+    {% block menu %}
+    {% endblock %}
+    <br>
+    <br>
+    <br>
+    <div class="container">
+
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+
+</html>

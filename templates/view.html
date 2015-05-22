@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+
+{% block menu %}
+
+		{% if user %}
+
+	    <a href="/_edit{{id}}">Edit</a>  |  <a href="/_history{{id}}">History</a>  |  <a href="/logout">({{user}}) Logout</a>
+
+		{% else %}
+		<a href="/_history{{id}}">History</a>   |   <a href="/login">Login</a>   |   <a href="/signup">Signup</a>
+
+	    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+ <div id="content">
+
+  {{content}}
+
+ </div>
+
+{% endblock %}
